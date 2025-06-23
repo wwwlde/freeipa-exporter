@@ -1,0 +1,24 @@
+# TODO: FreeIPA Exporter — Improvement Roadmap
+
+# 📅 Implementation Plan (Phased):
+
+# 🔹 Phase 1: Logging and Basic Metrics
+# ✅ Improve logging with proper levels (INFO, DEBUG, ERROR)
+# ✅ Add `ipa_up` metric to indicate FreeIPA API availability
+# ✅ Add `scrape_duration_seconds` metric to measure scrape time
+# ✅ Handle connection and request timeouts gracefully *(partially handled with fallback if server._conn is None)*
+
+# 🔹 Phase 2: Health Checks and Metric Documentation
+# ✅ Implement `/health` endpoint for exporter health monitoring
+# ☐ Improve HELP strings and descriptions for Prometheus metrics
+# ☐ Add unit tests for core functionality
+
+# 🔹 Phase 3: Replication Status and Error Handling
+# ✅ Expose structured replication status (as metrics or labels)
+# ✅ Harden response parsing for inconsistent or malformed FreeIPA outputs *(basic try/except present)*
+# ☐ Improve resilience to edge cases (missing data, unexpected formats)
+
+# 🔹 Phase 4: Scalability and Performance (Optional)
+# ☐ Refactor for async support using `asyncio` or `trio` (optional)
+# ☐ Profile and optimize performance-critical paths
+# ☐ Add support for parallel requests to different FreeIPA endpoints
